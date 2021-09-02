@@ -62,7 +62,7 @@ export default function AllCharacters() {
      };
 
     const fetchCharacters = async () =>{
-       const result =  await axios(`http://localhost:9000/characters/${offset}`,{
+       const result =  await axios(`/characters/${offset}`,{
             headers:{Accept: 'application/json'},         
         })
        return (result.data)
