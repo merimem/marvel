@@ -8,3 +8,9 @@
     flex: 0 0 33.3333% !important;
     padding: 4px;
 }
+ nav > svg {
+    margin: 0 auto;
+}
+.pagination{
+    margin: 10px auto;
+}

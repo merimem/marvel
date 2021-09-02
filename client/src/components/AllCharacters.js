@@ -125,7 +125,7 @@ export default function AllCharacters() {
                 {list}
             </div>
          
-            <nav aria-label="Page navigation p-3">
+            <nav className = "pagination" aria-label="Page navigation p-3">
                 {pagination}
                </nav>
         </div>
