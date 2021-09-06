@@ -50,19 +50,18 @@ export default function AllCharacters() {
         } finally {
             setLoading(false);
         }
-     }
+    }
     
      //show the group of page numbers in the pagination
      const getPaginationGroup = () => {
-        let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
-        
+        let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;   
         if(start < 0)
          start=0  
         return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
      };
 
     const fetchCharacters = async () =>{
-       const result =  await axios(`/characters/${offset}`,{
+       const result =  await axios(`http://localhost:5000/characters/${offset}`,{
             headers:{Accept: 'application/json'},         
         })
        return (result.data)
@@ -73,11 +72,10 @@ export default function AllCharacters() {
     }, [offset])
     useEffect(async () => {
         setOffset(currentPage*dataLimit)
-      }, [currentPage])
+    }, [currentPage])
     
     
-    const list = characters.map((char, index)=>{
-       
+    const list = characters.map((char, index)=>{       
         return <Character key ={index} char={char}/>
     })
     const pagination = []
